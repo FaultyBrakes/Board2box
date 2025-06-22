@@ -1,0 +1,3 @@
+environment:
+  variables:
+    NODE_ENV: "production"
