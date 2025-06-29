@@ -1,15 +1,20 @@
 {
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "rewrites": [ { "source": "**", "destination": "/index.html" } ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "https://www.example.com",
+        "type": 301
+      }
     ],
-    "rewrites": [
+    "headers": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "headers": [
+          { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" }
+        ]
       }
     ]
   }
